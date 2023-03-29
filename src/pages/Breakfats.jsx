@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useFetch from "../Hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 function Breakfats() {
   const { data, loading, error } = useFetch(
     "https://msshohruh.github.io/api-menu/db.json",
     "breakfast"
   );
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!data && error) {
+      navigate("/");
+    }
+  }, [data, error]);
   if (loading) {
     return (
       <div className="center">

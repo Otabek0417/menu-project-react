@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useFetch from "../Hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 function Shakes() {
   const { data, loading, error } = useFetch(
     "https://msshohruh.github.io/api-menu/db.json",
     "shakes"
   );
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!data && error) {
+      navigate("/");
+    }
+  }, [data, error]);
 
   if (loading) {
     return (
