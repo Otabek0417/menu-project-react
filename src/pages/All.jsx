@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useFetch from "../Hooks/useFetch";
-import { useNavigate } from "react-router-dom";
 function All() {
   const { data, loading, error } = useFetch(
     "https://msshohruh.github.io/api-menu/db.json"
   );
   console.log(data);
+
   if (loading) {
     return (
       <div className="center">
@@ -20,13 +20,6 @@ function All() {
       </div>
     );
   }
-
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (!data && error) {
-  //     navigate("/home");
-  //   }
-  // }, [data, error]);
 
   return (
     <div className="section-center">

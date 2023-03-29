@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useFetch from "../Hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 function Lunch() {
   const { data, loading, error } = useFetch(
     "https://msshohruh.github.io/api-menu/db.json",
     "lunch"
   );
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!data && error) {
+      navigate("/");
+    }
+  }, [data, error]);
+
   if (loading) {
     return (
       <div className="center">
@@ -19,6 +28,7 @@ function Lunch() {
       </div>
     );
   }
+
   return (
     <div className="section-center">
       {data &&
