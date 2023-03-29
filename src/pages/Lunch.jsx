@@ -6,6 +6,12 @@ function Lunch() {
     "https://msshohruh.github.io/api-menu/db.json",
     "lunch"
   );
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (!data && error) {
+  //     navigate("/");
+  //   }
+  // }, [data, error]);
 
   if (loading) {
     return (
