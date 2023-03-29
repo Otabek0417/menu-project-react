@@ -3,7 +3,8 @@ import useFetch from "../Hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 function All() {
   const { data, loading, error } = useFetch(
-    "https://msshohruh.github.io/api-menu/db.json"
+    "https://msshohruh.github.io/api-menu/db.json",
+    "all"
   );
   console.log(data);
   if (loading) {
