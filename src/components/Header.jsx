@@ -9,7 +9,7 @@ function Header() {
           <div className="underline"></div>
         </div>
         <div className="btn-container">
-          <NavLink to="/all" className="filter-btn">all</NavLink>
+          <NavLink to="/" className="filter-btn">all</NavLink>
           <NavLink to="/breakfast" className="filter-btn">breakfast</NavLink>
           <NavLink to="/lunch" className="filter-btn">lunch</NavLink>
           <NavLink to="/shakes" className="filter-btn">shakes</NavLink>
