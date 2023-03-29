@@ -1,18 +1,11 @@
 import React, { useEffect } from "react";
 import useFetch from "../Hooks/useFetch";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 function Lunch() {
   const { data, loading, error } = useFetch(
     "https://msshohruh.github.io/api-menu/db.json",
     "lunch"
   );
-  const navigate = useNavigate();
-  console.log(navigate);
-  useEffect(() => {
-    if (!data && error) {
-      navigate("/");
-    }
-  }, [data, error]);
 
   if (loading) {
     return (
